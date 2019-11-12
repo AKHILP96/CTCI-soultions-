@@ -1,0 +1,15 @@
+function checker(str){
+  let checker = 0;
+  for(let i=0;i<str.length;i++){
+    let num = str.charCodeAt(i) - "a".charCodeAt(0);
+    console.log(1<<num);
+    console.log(checker&&(1<<num));
+    if((checker & (1<<num))>0){
+      return false;
+    }
+    checker = checker | (1<<num);
+  }
+  return true;
+}
+
+checker("abcdefgh");
