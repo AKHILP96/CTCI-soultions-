@@ -1,3 +1,5 @@
+
+// 1 without using extra DS 
 function checker(str){
   let checker = 0;
   for(let i=0;i<str.length;i++){
@@ -11,5 +13,20 @@ function checker(str){
   }
   return true;
 }
+
+// 2 with using map
+function checker(str){
+  let map = {};
+  for(let s of str){
+    if(!map[s]){
+      map[s] = 1;
+    }else{
+      return false;
+    }
+  }
+  console.log(map);
+  return true;
+}
+
 
 checker("abcdefgh");
