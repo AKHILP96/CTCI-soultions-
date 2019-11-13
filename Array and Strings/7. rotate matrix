@@ -1,0 +1,13 @@
+function rotate(arr){
+  let n = arr.length;
+  for(let x=0;x<Math.floor(n/2);x++){
+    for(let y=x;y<n-x-1;y++){
+      let temp = arr[x][y];
+      arr[x][y] = arr[y][n-x-1];
+      arr[y][n-x-1] = arr[n-x-1][n-y-1];
+      arr[n-x-1][n-y-1] = arr[n-y-1][x];
+      arr[n-y-1][x] = temp;
+    }
+  }
+  return arr;
+}
